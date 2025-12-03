@@ -102,7 +102,7 @@ $config = [
                 'divisions' => 'backend/division/index',
 
                 // Default
-                '' => 'ef/default/index',
+                '' => '/ef/default/dashboard',
             ],
         ],
 

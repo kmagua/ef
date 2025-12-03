@@ -26,7 +26,8 @@ class DefaultController extends Controller
                 //'only' => ['index', ],
                 'rules' => [
                     [
-                        'actions' => ['logout','login', 'index','verify-otp', 'error', 'equitable-chart',
+                        'actions' => ['logout','login'
+                            , 'dashboard', 'index','verify-otp', 'error', 'equitable-chart',
                             'charts', 'equitable-byregion-chart','main-chart', 'total-revenue-vs-actual-revenue', 
                             'target-osr-vs-actual', 'budgetary-analysis', 'pending-bills','top-ten-counties','pending-by-financial-year'],
                         'allow' => true,
@@ -1315,4 +1316,230 @@ public function actionIgfrd()
 
        
     }
+    
+    /**
+ * Dashboard action - displays summary statistics and analytics for both 1st and 2nd Marginalization Policies
+ * @return string
+ */
+public function actionDashboard()
+{
+    $this->layout = 'layout';
+    
+    // 1st Marginalization Policy Data
+    // Total Counties
+    $firstPolicyCounties = \Yii::$app->db->createCommand("
+        SELECT COUNT(DISTINCT county) as total_counties
+        FROM equalization_fund_project
+        WHERE county IS NOT NULL AND county != ''
+    ")->queryOne();
+    $firstPolicyTotalCounties = (int)($firstPolicyCounties['total_counties'] ?? 0);
+    
+    // Total Allocation
+    $firstPolicyAllocation = \Yii::$app->db->createCommand("
+        SELECT COALESCE(SUM(ef_allocation), 0) as total_allocation
+        FROM equalization_fund_allocation
+        WHERE ef_allocation IS NOT NULL
+    ")->queryOne();
+    $firstPolicyTotalAllocation = (float)($firstPolicyAllocation['total_allocation'] ?? 0);
+    
+    // Total Disbursement
+    $firstPolicyDisbursement = \Yii::$app->db->createCommand("
+        SELECT COALESCE(SUM(amount_disbursed), 0) as total_disbursement
+        FROM equalization_fund_disbursement
+        WHERE amount_disbursed IS NOT NULL
+    ")->queryOne();
+    $firstPolicyTotalDisbursement = (float)($firstPolicyDisbursement['total_disbursement'] ?? 0);
+    
+    // 1st Policy Analytics
+    // Yearly Allocation Trend
+    $firstPolicyYearlyAllocation = \Yii::$app->db->createCommand("
+        SELECT financial_year, COALESCE(SUM(ef_allocation), 0) as allocation
+        FROM equalization_fund_allocation
+        GROUP BY financial_year
+        ORDER BY financial_year
+    ")->queryAll();
+    
+    // Sector Distribution
+    $firstPolicySectorDistribution = \Yii::$app->db->createCommand("
+        SELECT sector, COALESCE(SUM(budget_2018_19), 0) as total_budget
+        FROM equalization_fund_project
+        WHERE sector IS NOT NULL
+        GROUP BY sector
+        ORDER BY total_budget DESC
+    ")->queryAll();
+    
+    // Top 5 Counties by Allocation
+    $firstPolicyTopCounties = \Yii::$app->db->createCommand("
+        SELECT county, COALESCE(SUM(budget_2018_19), 0) as total_allocation
+        FROM equalization_fund_project
+        WHERE county IS NOT NULL
+        GROUP BY county
+        ORDER BY total_allocation DESC
+        LIMIT 5
+    ")->queryAll();
+    
+    // Absorption Rate by County
+    $firstPolicyAbsorptionByCounty = \Yii::$app->db->createCommand("
+        SELECT d.county, 
+               COALESCE(SUM(d.amount_disbursed), 0) as disbursed,
+               COALESCE(SUM(p.budget_2018_19), 0) as allocated,
+               CASE 
+                 WHEN COALESCE(SUM(p.budget_2018_19), 0) > 0 
+                 THEN (COALESCE(SUM(d.amount_disbursed), 0) / COALESCE(SUM(p.budget_2018_19), 0)) * 100 
+                 ELSE 0 
+               END as absorption_rate
+        FROM equalization_fund_disbursement d
+        LEFT JOIN equalization_fund_project p ON d.county = p.county
+        GROUP BY d.county
+        ORDER BY absorption_rate DESC
+    ")->queryAll();
+    
+    // Project Completion Status
+    $firstPolicyCompletionStatus = \Yii::$app->db->createCommand("
+        SELECT 
+               SUM(CASE WHEN percent_completion = 100 THEN 1 ELSE 0 END) as completed,
+               SUM(CASE WHEN percent_completion > 0 AND percent_completion < 100 THEN 1 ELSE 0 END) as in_progress,
+               SUM(CASE WHEN percent_completion = 0 OR percent_completion IS NULL THEN 1 ELSE 0 END) as not_started
+        FROM equalization_fund_project
+    ")->queryOne();
+    
+    // 2nd Marginalization Policy Data
+    // Total Counties
+    $secondPolicyCounties = \Yii::$app->db->createCommand("
+        SELECT COUNT(DISTINCT county) as total_counties
+        FROM eq2_appropriation
+        WHERE county IS NOT NULL AND county != ''
+    ")->queryOne();
+    $secondPolicyTotalCounties = (int)($secondPolicyCounties['total_counties'] ?? 0);
+    
+    // Total Allocation
+    $secondPolicyAllocation = \Yii::$app->db->createCommand("
+        SELECT COALESCE(SUM(allocation_ksh), 0) as total_allocation
+        FROM eq2_appropriation
+        WHERE allocation_ksh IS NOT NULL
+    ")->queryOne();
+    $secondPolicyTotalAllocation = (float)($secondPolicyAllocation['total_allocation'] ?? 0);
+    
+    // Total Disbursement
+    $secondPolicyDisbursement = \Yii::$app->db->createCommand("
+        SELECT COALESCE(SUM(total_disbursement), 0) as total_disbursement
+        FROM eq2_disbursement
+        WHERE total_disbursement IS NOT NULL
+    ")->queryOne();
+    $secondPolicyTotalDisbursement = (float)($secondPolicyDisbursement['total_disbursement'] ?? 0);
+    
+    // 2nd Policy Analytics
+    // Yearly Allocation Trend
+    $secondPolicyYearlyAllocation = \Yii::$app->db->createCommand("
+        SELECT financial_year, COALESCE(SUM(allocation_ksh), 0) as allocation
+        FROM eq2_appropriation
+        GROUP BY financial_year
+        ORDER BY financial_year
+    ")->queryAll();
+    
+    // Sector Distribution
+    $secondPolicySectorDistribution = \Yii::$app->db->createCommand("
+        SELECT sector, COALESCE(SUM(project_budget), 0) as total_budget
+        FROM eq2_projects
+        WHERE sector IS NOT NULL
+        GROUP BY sector
+        ORDER BY total_budget DESC
+    ")->queryAll();
+    
+    // Top 5 Counties by Allocation
+    $secondPolicyTopCounties = \Yii::$app->db->createCommand("
+        SELECT county, COALESCE(SUM(allocation_ksh), 0) as total_allocation
+        FROM eq2_appropriation
+        WHERE county IS NOT NULL
+        GROUP BY county
+        ORDER BY total_allocation DESC
+        LIMIT 5
+    ")->queryAll();
+    
+    // Absorption Rate by County
+    $secondPolicyAbsorptionByCounty = \Yii::$app->db->createCommand("
+        SELECT d.county, 
+               COALESCE(SUM(d.total_disbursement), 0) as disbursed,
+               COALESCE(SUM(a.allocation_ksh), 0) as allocated,
+               CASE 
+                 WHEN COALESCE(SUM(a.allocation_ksh), 0) > 0 
+                 THEN (COALESCE(SUM(d.total_disbursement), 0) / COALESCE(SUM(a.allocation_ksh), 0)) * 100 
+                 ELSE 0 
+               END as absorption_rate
+        FROM eq2_disbursement d
+        LEFT JOIN eq2_appropriation a ON d.county = a.county
+        GROUP BY d.county
+        ORDER BY absorption_rate DESC
+    ")->queryAll();
+    
+    // Project Distribution by Financial Year
+    $secondPolicyProjectsByYear = \Yii::$app->db->createCommand("
+        SELECT financial_year, COUNT(*) as project_count
+        FROM eq2_projects
+        GROUP BY financial_year
+        ORDER BY financial_year
+    ")->queryAll();
+    
+    // Comparison Metrics
+    $comparisonData = [
+        'allocation_difference' => $secondPolicyTotalAllocation - $firstPolicyTotalAllocation,
+        'disbursement_difference' => $secondPolicyTotalDisbursement - $firstPolicyTotalDisbursement,
+        'first_policy_absorption_rate' => $firstPolicyTotalAllocation > 0 ? 
+            ($firstPolicyTotalDisbursement / $firstPolicyTotalAllocation) * 100 : 0,
+        'second_policy_absorption_rate' => $secondPolicyTotalAllocation > 0 ? 
+            ($secondPolicyTotalDisbursement / $secondPolicyTotalAllocation) * 100 : 0,
+    ];
+    
+    // Map View Data - Get projects with coordinates
+    $mapProjects = \app\modules\ef\models\EqualizationTwoProjects::find()
+        ->where(['not', ['latitude' => null]])
+        ->andWhere(['not', ['longitude' => null]])
+        ->all();
+    
+    // Prepare project data for JavaScript
+    $mapProjectsData = [];
+    foreach ($mapProjects as $project) {
+        $mapProjectsData[] = [
+            'id' => $project->id,
+            'name' => $project->project_description ?: 'Unnamed Project',
+            'county' => $project->county ?: 'N/A',
+            'constituency' => $project->constituency ?: 'N/A',
+            'ward' => $project->ward ?: 'N/A',
+            'marginalised_area' => $project->marginalised_area ?: 'N/A',
+            'sector' => $project->sector ?: 'N/A',
+            'budget' => $project->project_budget ? number_format($project->project_budget, 2) : '0.00',
+            'latitude' => (float)$project->latitude,
+            'longitude' => (float)$project->longitude,
+        ];
+    }
+    
+    return $this->render('dashboard', [
+        // 1st Policy Data
+        'firstPolicyTotalCounties' => $firstPolicyTotalCounties,
+        'firstPolicyTotalAllocation' => $firstPolicyTotalAllocation,
+        'firstPolicyTotalDisbursement' => $firstPolicyTotalDisbursement,
+        'firstPolicyYearlyAllocation' => $firstPolicyYearlyAllocation,
+        'firstPolicySectorDistribution' => $firstPolicySectorDistribution,
+        'firstPolicyTopCounties' => $firstPolicyTopCounties,
+        'firstPolicyAbsorptionByCounty' => $firstPolicyAbsorptionByCounty,
+        'firstPolicyCompletionStatus' => $firstPolicyCompletionStatus,
+        
+        // 2nd Policy Data
+        'secondPolicyTotalCounties' => $secondPolicyTotalCounties,
+        'secondPolicyTotalAllocation' => $secondPolicyTotalAllocation,
+        'secondPolicyTotalDisbursement' => $secondPolicyTotalDisbursement,
+        'secondPolicyYearlyAllocation' => $secondPolicyYearlyAllocation,
+        'secondPolicySectorDistribution' => $secondPolicySectorDistribution,
+        'secondPolicyTopCounties' => $secondPolicyTopCounties,
+        'secondPolicyAbsorptionByCounty' => $secondPolicyAbsorptionByCounty,
+        'secondPolicyProjectsByYear' => $secondPolicyProjectsByYear,
+        
+        // Comparison Data
+        'comparisonData' => $comparisonData,
+        
+        // Map View Data
+        'mapProjects' => $mapProjects,
+        'mapProjectsData' => $mapProjectsData,
+    ]);
+}
 }

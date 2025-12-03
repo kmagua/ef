@@ -282,3 +282,4 @@ $_SERVER = [
     'REQUEST_TIME_FLOAT' => 1764751653.821658,
     'REQUEST_TIME' => 1764751653,
 ]
+[03-Dec-2025 13:16:02 UTC] PHP Fatal error:  Cannot use empty array elements in arrays in C:\Apache24\htdocs\ef\modules\ef\controllers\DefaultController.php on line 29
