@@ -1,0 +1,244 @@
+/* CSS Variables for Theme Consistency */
+/* Base Styles */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Open Sans', sans-serif;
+    transition: background-color 0.3s ease;
+}
+
+a {
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: var(--secondary-color);
+}
+
+/* Advanced Navbar Styles */
+.navbar {
+    transition: all 0.3s ease-in-out;
+    background-color: var(--primary-color) !important; /* Override Bootstrap styles */
+}
+
+.navbar .nav-link {
+    transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.navbar .nav-link:hover {
+    transform: var(--hover-effect);
+    color: var(--secondary-color) !important;/* var(--secondary-color) !important*/
+}
+
+/* Button Enhancements */
+.btn {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.btn:hover {
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.15);
+    transform: translateY(-2px);
+}
+
+
+/* Typography Enhancements */
+h1, h2, h3, h4, h5, h6 {
+    color: var(--primary-color);
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    transition: color 0.3s ease;
+}
+.py-5 h5{
+    color:#000000 !important;
+}
+.py-5  p{
+    color:#ffffff;
+}
+.mt-4{
+    color:#ffffff;
+}
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover {
+    color: var(--secondary-color);
+}
+
+p {
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Card Component */
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card .card-header {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.card .card-header:hover {
+    background-color: var(--secondary-color);
+}
+
+.card .card-body {
+    padding: 1.5rem;
+}
+
+/* Form Enhancements */
+input, textarea {
+    border: 1px solid var(--primary-color);
+    transition: border-color 0.3s ease-in-out;
+}
+
+input:focus, textarea:focus {
+    border-color: var(--secondary-color);
+    outline: none;
+}
+
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary-color);
+}
+
+/* Tooltip Enhancements */
+.tooltip-inner {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+.tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before,
+.tooltip.bs-tooltip-top .arrow::before {
+    border-top-color: var(--primary-color);
+}
+
+.tooltip:hover .tooltip-inner {
+    background-color: var(--secondary-color);
+}
+
+/* Modal Enhancements */
+.modal-content {
+    transition: transform 0.3s ease-out;
+    border-radius: 0.5rem;
+    overflow: hidden; /* Ensure sharp corners are maintained */
+}
+
+.modal-header, .modal-footer {
+    border-bottom: 1px solid var(--primary-color);
+    border-top: 1px solid var(--primary-color);
+}
+
+.modal-header {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.modal-footer {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+.modal-body {
+    padding: 1.5rem;
+}
+
+/* Enhance modal appearance on hover */
+.modal-content:hover {
+    transform: scale(1.01);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Advanced About Section */
+.about-img {
+    transition: all 0.3s ease-in-out;
+}
+
+.about-img:hover {
+    transform: var(--hover-effect);
+}
+
+/* Interactive Accordion */
+.accordion-button {
+    transition: background-color 0.3s ease;
+}
+
+.accordion-button:not(.collapsed) {
+    background-color: var(--secondary-color) !important; /* Important to override Bootstrap */
+    color: var(--background-color) !important;
+}
+
+/* Footer Enhancements */
+footer {
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    color: var(--background-color);
+}
+
+footer a {
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--text-color);
+}
+
+/* Spinner Enhancements */
+#spinner {
+    border-top-color: var(--secondary-color);
+    transition: transform 0.75s linear;
+}
+
+#spinner.show {
+    transform: rotate(360deg);
+}
+
+/* Back to Top Button Advanced */
+.back-to-top {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    transition: all 0.3s ease-in-out;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-5px);
+}
+
+/* Responsive Design Enhancements */
+@media (max-width: 992px) {
+    .navbar .nav-link {
+        padding: 0.5rem 1rem; /* Increase padding for better touch targets */
+    }
+
+    .navbar-brand h1 {
+        font-size: 1.5rem; /* Adjust brand size for smaller screens */
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}

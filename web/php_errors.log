@@ -1,0 +1,284 @@
+[03-Dec-2025 08:29:29 UTC] An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "/backend/default/error". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\ErrorHandler.php(109): yii\base\Module->runAction('/backend/defaul...')
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\ErrorHandler.php(152): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "backend/default/index". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/default...', Array)
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'PATH' => 'C:\\Python313\\Scripts\\;C:\\Python313\\;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Python39\\Scripts\\;C:\\Python39\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\PHP;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Python2;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files\\MariaDB 10.5\\bin;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Roslyn;C:\\Program Files\\PuTTY\\;C:\\WINDOWS\\SysWow64;C:\\Program Files\\nodejs\\;C:\\Users\\USER\\flutter\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps',
+    'SYSTEMROOT' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW',
+    'WINDIR' => 'C:\\WINDOWS',
+    'PHPRC' => 'c:/PHP',
+    'PHP_FCGI_MAX_REQUESTS' => '1000',
+    '_FCGI_SHUTDOWN_EVENT_' => '1424',
+    'SCRIPT_NAME' => '/ef/web/index.php',
+    'REQUEST_URI' => '/ef/web/',
+    'QUERY_STRING' => '',
+    'REQUEST_METHOD' => 'GET',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'REMOTE_PORT' => '63494',
+    'SCRIPT_FILENAME' => 'C:/Apache24/htdocs/ef/web/index.php',
+    'SERVER_ADMIN' => 'admin@example.com',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'CONTEXT_PREFIX' => '',
+    'REQUEST_SCHEME' => 'http',
+    'DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_NAME' => 'localhost',
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) mod_fcgid/2.3.10-dev',
+    'SERVER_SIGNATURE' => '',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'HTTP_PRIORITY' => 'u=0, i',
+    'HTTP_SEC_FETCH_USER' => '?1',
+    'HTTP_SEC_FETCH_SITE' => 'none',
+    'HTTP_SEC_FETCH_MODE' => 'navigate',
+    'HTTP_SEC_FETCH_DEST' => 'document',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_COOKIE' => '_csrf-frontend=66ae064831936649616b525a575c2b15f35f25e65c35efee0e71b6b8bb952f44a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220auRSCwodJEZli-ql9rp9S6QbbFPJNjC%22%3B%7D; _csrf-backend=a85b83239bffbad4e2d40d3fa8f2babc5a3295e72f28cb897faf01f0104b5e1da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ZhBgn6DkQ-s3thBhVlbQb1RpQ4_8I7Pg%22%3B%7D; scrapmetal_app_sess=im5ngg71ohhfli2tct2p1b5ss0; accredit_sess=qvpjpg2mmmd3f7g2fnjvk77a7a; session_token=325a2fef7c20c617fc62a146bdaa28a436347fefdaf8c980dfae959e7a8783a7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22session_token%22%3Bi%3A1%3Bs%3A32%3A%22Uq7SQWl0hRGCtAImf1qTuFuMwFAukR9D%22%3B%7D; cgs-portal_session=lr86i9i6c1c4e6vii2p8esl0ov; PHPSESSID=4nnud5k1beebr0a6i4utst3j8g; my_oksndbbsdsdsdsd=nsb591jeqcv6sqf9saogf0fqkb; prof_accredit_sess=7630tkcf4hveu6jga65h8t419m; standards_sas_sess=ljf3dtfkjk38jk68g4lv3tflfk; dpmis-portal_session=289aj88fk016ea289sgpu25ej9; _csrf=d3256484acc8a34cb5ae85c6dbf52be6e4f22b2eb03f86cd1013941251a232e6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223yruugld3xekC2oozn8AIxDkSw4M6niM%22%3B%7D; kvb-portal_session=d79c8kct7cah42dll94fkhg9ng; _csrf=da29c60f666759ec58a575f27a2aaae637a21011a1625e63a713fb2d6de8680aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QezEfFkwmne727_1jRbQR-a1VmlJ96_S%22%3B%7D',
+    'HTTP_CONNECTION' => 'close',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0',
+    'HTTP_HOST' => 'localhost',
+    'FCGI_ROLE' => 'RESPONDER',
+    'PHP_SELF' => '/ef/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1764750568.756469,
+    'REQUEST_TIME' => 1764750568,
+]
+[03-Dec-2025 08:30:01 UTC] An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "/backend/default/error". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\ErrorHandler.php(109): yii\base\Module->runAction('/backend/defaul...')
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\ErrorHandler.php(152): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "backend/default/login". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/default...', Array)
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'PATH' => 'C:\\Python313\\Scripts\\;C:\\Python313\\;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Python39\\Scripts\\;C:\\Python39\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\PHP;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Python2;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files\\MariaDB 10.5\\bin;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Roslyn;C:\\Program Files\\PuTTY\\;C:\\WINDOWS\\SysWow64;C:\\Program Files\\nodejs\\;C:\\Users\\USER\\flutter\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps',
+    'SYSTEMROOT' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW',
+    'WINDIR' => 'C:\\WINDOWS',
+    'PHPRC' => 'c:/PHP',
+    'PHP_FCGI_MAX_REQUESTS' => '1000',
+    '_FCGI_SHUTDOWN_EVENT_' => '1424',
+    'SCRIPT_NAME' => '/ef/web/index.php',
+    'REQUEST_URI' => '/ef/web/backend/default/login',
+    'QUERY_STRING' => '',
+    'REQUEST_METHOD' => 'GET',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'REDIRECT_URL' => '/ef/web/backend/default/login',
+    'REMOTE_PORT' => '63497',
+    'SCRIPT_FILENAME' => 'C:/Apache24/htdocs/ef/web/index.php',
+    'SERVER_ADMIN' => 'admin@example.com',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'CONTEXT_PREFIX' => '',
+    'REQUEST_SCHEME' => 'http',
+    'DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_NAME' => 'localhost',
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) mod_fcgid/2.3.10-dev',
+    'SERVER_SIGNATURE' => '',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'HTTP_PRIORITY' => 'u=0, i',
+    'HTTP_SEC_FETCH_USER' => '?1',
+    'HTTP_SEC_FETCH_SITE' => 'none',
+    'HTTP_SEC_FETCH_MODE' => 'navigate',
+    'HTTP_SEC_FETCH_DEST' => 'document',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_COOKIE' => '_csrf-frontend=66ae064831936649616b525a575c2b15f35f25e65c35efee0e71b6b8bb952f44a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220auRSCwodJEZli-ql9rp9S6QbbFPJNjC%22%3B%7D; _csrf-backend=a85b83239bffbad4e2d40d3fa8f2babc5a3295e72f28cb897faf01f0104b5e1da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ZhBgn6DkQ-s3thBhVlbQb1RpQ4_8I7Pg%22%3B%7D; scrapmetal_app_sess=im5ngg71ohhfli2tct2p1b5ss0; accredit_sess=qvpjpg2mmmd3f7g2fnjvk77a7a; session_token=325a2fef7c20c617fc62a146bdaa28a436347fefdaf8c980dfae959e7a8783a7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22session_token%22%3Bi%3A1%3Bs%3A32%3A%22Uq7SQWl0hRGCtAImf1qTuFuMwFAukR9D%22%3B%7D; cgs-portal_session=lr86i9i6c1c4e6vii2p8esl0ov; PHPSESSID=4nnud5k1beebr0a6i4utst3j8g; my_oksndbbsdsdsdsd=nsb591jeqcv6sqf9saogf0fqkb; prof_accredit_sess=7630tkcf4hveu6jga65h8t419m; standards_sas_sess=ljf3dtfkjk38jk68g4lv3tflfk; dpmis-portal_session=289aj88fk016ea289sgpu25ej9; _csrf=d3256484acc8a34cb5ae85c6dbf52be6e4f22b2eb03f86cd1013941251a232e6a%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%223yruugld3xekC2oozn8AIxDkSw4M6niM%22%3B%7D; kvb-portal_session=d79c8kct7cah42dll94fkhg9ng; _csrf=da29c60f666759ec58a575f27a2aaae637a21011a1625e63a713fb2d6de8680aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QezEfFkwmne727_1jRbQR-a1VmlJ96_S%22%3B%7D',
+    'HTTP_CONNECTION' => 'close',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0',
+    'HTTP_HOST' => 'localhost',
+    'REDIRECT_STATUS' => '200',
+    'FCGI_ROLE' => 'RESPONDER',
+    'PHP_SELF' => '/ef/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1764750601.948438,
+    'REQUEST_TIME' => 1764750601,
+]
+[03-Dec-2025 08:33:49 UTC] PHP Fatal error:  Cannot redeclare app\modules\ef\controllers\DefaultController::actionLogin() in C:\Apache24\htdocs\ef\modules\ef\controllers\DefaultController.php on line 551
+[03-Dec-2025 08:42:51 UTC] An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "/backend/default/error". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\ErrorHandler.php(109): yii\base\Module->runAction('/backend/defaul...')
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\ErrorHandler.php(152): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "backend/default/login". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/default...', Array)
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'PATH' => 'C:\\Python313\\Scripts\\;C:\\Python313\\;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Python39\\Scripts\\;C:\\Python39\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\PHP;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Python2;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files\\MariaDB 10.5\\bin;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Roslyn;C:\\Program Files\\PuTTY\\;C:\\WINDOWS\\SysWow64;C:\\Program Files\\nodejs\\;C:\\Users\\USER\\flutter\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps',
+    'SYSTEMROOT' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW',
+    'WINDIR' => 'C:\\WINDOWS',
+    'PHPRC' => 'c:/PHP',
+    'PHP_FCGI_MAX_REQUESTS' => '1000',
+    '_FCGI_SHUTDOWN_EVENT_' => '1424',
+    'SCRIPT_NAME' => '/ef/web/index.php',
+    'REQUEST_URI' => '/ef/web/backend/default/login',
+    'QUERY_STRING' => '',
+    'REQUEST_METHOD' => 'POST',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'REDIRECT_URL' => '/ef/web/backend/default/login',
+    'REMOTE_PORT' => '64452',
+    'SCRIPT_FILENAME' => 'C:/Apache24/htdocs/ef/web/index.php',
+    'SERVER_ADMIN' => 'admin@example.com',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'CONTEXT_PREFIX' => '',
+    'REQUEST_SCHEME' => 'http',
+    'DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_NAME' => 'localhost',
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) mod_fcgid/2.3.10-dev',
+    'SERVER_SIGNATURE' => '',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'HTTP_PRIORITY' => 'u=0, i',
+    'HTTP_SEC_FETCH_USER' => '?1',
+    'HTTP_SEC_FETCH_SITE' => 'same-origin',
+    'HTTP_SEC_FETCH_MODE' => 'navigate',
+    'HTTP_SEC_FETCH_DEST' => 'document',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_COOKIE' => '_csrf-frontend=66ae064831936649616b525a575c2b15f35f25e65c35efee0e71b6b8bb952f44a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220auRSCwodJEZli-ql9rp9S6QbbFPJNjC%22%3B%7D; _csrf-backend=a85b83239bffbad4e2d40d3fa8f2babc5a3295e72f28cb897faf01f0104b5e1da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ZhBgn6DkQ-s3thBhVlbQb1RpQ4_8I7Pg%22%3B%7D; scrapmetal_app_sess=im5ngg71ohhfli2tct2p1b5ss0; accredit_sess=qvpjpg2mmmd3f7g2fnjvk77a7a; session_token=325a2fef7c20c617fc62a146bdaa28a436347fefdaf8c980dfae959e7a8783a7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22session_token%22%3Bi%3A1%3Bs%3A32%3A%22Uq7SQWl0hRGCtAImf1qTuFuMwFAukR9D%22%3B%7D; cgs-portal_session=lr86i9i6c1c4e6vii2p8esl0ov; PHPSESSID=4nnud5k1beebr0a6i4utst3j8g; my_oksndbbsdsdsdsd=nsb591jeqcv6sqf9saogf0fqkb; prof_accredit_sess=7630tkcf4hveu6jga65h8t419m; standards_sas_sess=ljf3dtfkjk38jk68g4lv3tflfk; dpmis-portal_session=289aj88fk016ea289sgpu25ej9; _csrf=69b571b6f2dfc1c9e7444a09015c1cc4735ed943b6d7d0a6eed3784f52a3f21fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22R3q5VP9LJsDqyoilGPMoaBHqyX9GeDcv%22%3B%7D; kvb-portal_session=d79c8kct7cah42dll94fkhg9ng; _csrf=da29c60f666759ec58a575f27a2aaae637a21011a1625e63a713fb2d6de8680aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QezEfFkwmne727_1jRbQR-a1VmlJ96_S%22%3B%7D',
+    'HTTP_REFERER' => 'http://localhost/ef/web/ef/default/login',
+    'HTTP_CONNECTION' => 'close',
+    'HTTP_ORIGIN' => 'http://localhost',
+    'CONTENT_LENGTH' => '260',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0',
+    'HTTP_HOST' => 'localhost',
+    'REDIRECT_STATUS' => '200',
+    'FCGI_ROLE' => 'RESPONDER',
+    'PHP_SELF' => '/ef/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1764751371.921968,
+    'REQUEST_TIME' => 1764751371,
+]
+[03-Dec-2025 08:45:55 UTC] PHP Fatal error:  Cannot redeclare app\modules\ef\controllers\DefaultController::actionGenerateSecurityStamp() in C:\Apache24\htdocs\ef\modules\ef\controllers\DefaultController.php on line 277
+[03-Dec-2025 08:47:33 UTC] An Error occurred while handling another error:
+yii\base\InvalidRouteException: Unable to resolve the request "/backend/default/error". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\ErrorHandler.php(109): yii\base\Module->runAction('/backend/defaul...')
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\ErrorHandler.php(152): yii\web\ErrorHandler->renderException(Object(yii\web\NotFoundHttpException))
+#2 [internal function]: yii\base\ErrorHandler->handleException(Object(yii\web\NotFoundHttpException))
+#3 {main}
+Previous exception:
+yii\base\InvalidRouteException: Unable to resolve the request "backend/default/login". in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Module.php:564
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php(103): yii\base\Module->runAction('backend/default...', Array)
+#1 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#2 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#3 {main}
+
+Next yii\web\NotFoundHttpException: Page not found. in C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\web\Application.php:115
+Stack trace:
+#0 C:\Apache24\htdocs\ef\vendor\yiisoft\yii2\base\Application.php(387): yii\web\Application->handleRequest(Object(yii\web\Request))
+#1 C:\Apache24\htdocs\ef\web\index.php(12): yii\base\Application->run()
+#2 {main}
+$_SERVER = [
+    'PATH' => 'C:\\Python313\\Scripts\\;C:\\Python313\\;C:\\Program Files\\Common Files\\Oracle\\Java\\javapath;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\java8path;C:\\Program Files (x86)\\Common Files\\Oracle\\Java\\javapath;C:\\Python310\\Scripts\\;C:\\Python310\\;C:\\Python39\\Scripts\\;C:\\Python39\\;C:\\WINDOWS\\system32;C:\\WINDOWS;C:\\WINDOWS\\System32\\Wbem;C:\\WINDOWS\\System32\\WindowsPowerShell\\v1.0\\;C:\\WINDOWS\\System32\\OpenSSH\\;C:\\Program Files\\Intel\\WiFi\\bin\\;C:\\Program Files\\Common Files\\Intel\\WirelessCommon\\;C:\\Program Files (x86)\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Intel\\Intel(R) Management Engine Components\\DAL;C:\\Program Files\\Git\\cmd;C:\\PHP;C:\\ProgramData\\ComposerSetup\\bin;C:\\Program Files\\dotnet\\;C:\\Program Files\\Microsoft SQL Server\\130\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\Client SDK\\ODBC\\170\\Tools\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\Tools\\Binn\\;C:\\Program Files\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Program Files (x86)\\Microsoft SQL Server\\150\\DTS\\Binn\\;C:\\Python2;C:\\Program Files\\Java\\jdk1.8.0_251\\bin;C:\\Program Files\\MariaDB 10.5\\bin;C:\\ProgramData\\chocolatey\\bin;C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Community\\MSBuild\\Current\\Bin\\Roslyn;C:\\Program Files\\PuTTY\\;C:\\WINDOWS\\SysWow64;C:\\Program Files\\nodejs\\;C:\\Users\\USER\\flutter\\bin;C:\\WINDOWS\\system32\\config\\systemprofile\\AppData\\Local\\Microsoft\\WindowsApps',
+    'SYSTEMROOT' => 'C:\\WINDOWS',
+    'COMSPEC' => 'C:\\WINDOWS\\system32\\cmd.exe',
+    'PATHEXT' => '.COM;.EXE;.BAT;.CMD;.VBS;.VBE;.JS;.JSE;.WSF;.WSH;.MSC;.PY;.PYW',
+    'WINDIR' => 'C:\\WINDOWS',
+    'PHPRC' => 'c:/PHP',
+    'PHP_FCGI_MAX_REQUESTS' => '1000',
+    '_FCGI_SHUTDOWN_EVENT_' => '1424',
+    'SCRIPT_NAME' => '/ef/web/index.php',
+    'REQUEST_URI' => '/ef/web/backend/default/login',
+    'QUERY_STRING' => '',
+    'REQUEST_METHOD' => 'POST',
+    'SERVER_PROTOCOL' => 'HTTP/1.1',
+    'GATEWAY_INTERFACE' => 'CGI/1.1',
+    'REDIRECT_URL' => '/ef/web/backend/default/login',
+    'REMOTE_PORT' => '63573',
+    'SCRIPT_FILENAME' => 'C:/Apache24/htdocs/ef/web/index.php',
+    'SERVER_ADMIN' => 'admin@example.com',
+    'CONTEXT_DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'CONTEXT_PREFIX' => '',
+    'REQUEST_SCHEME' => 'http',
+    'DOCUMENT_ROOT' => 'C:/Apache24/htdocs/',
+    'REMOTE_ADDR' => '127.0.0.1',
+    'SERVER_PORT' => '80',
+    'SERVER_ADDR' => '127.0.0.1',
+    'SERVER_NAME' => 'localhost',
+    'SERVER_SOFTWARE' => 'Apache/2.4.43 (Win64) mod_fcgid/2.3.10-dev',
+    'SERVER_SIGNATURE' => '',
+    'SystemRoot' => 'C:\\WINDOWS',
+    'HTTP_PRIORITY' => 'u=0, i',
+    'HTTP_SEC_FETCH_USER' => '?1',
+    'HTTP_SEC_FETCH_SITE' => 'same-origin',
+    'HTTP_SEC_FETCH_MODE' => 'navigate',
+    'HTTP_SEC_FETCH_DEST' => 'document',
+    'HTTP_UPGRADE_INSECURE_REQUESTS' => '1',
+    'HTTP_COOKIE' => '_csrf-frontend=66ae064831936649616b525a575c2b15f35f25e65c35efee0e71b6b8bb952f44a%3A2%3A%7Bi%3A0%3Bs%3A14%3A%22_csrf-frontend%22%3Bi%3A1%3Bs%3A32%3A%220auRSCwodJEZli-ql9rp9S6QbbFPJNjC%22%3B%7D; _csrf-backend=a85b83239bffbad4e2d40d3fa8f2babc5a3295e72f28cb897faf01f0104b5e1da%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22_csrf-backend%22%3Bi%3A1%3Bs%3A32%3A%22ZhBgn6DkQ-s3thBhVlbQb1RpQ4_8I7Pg%22%3B%7D; scrapmetal_app_sess=im5ngg71ohhfli2tct2p1b5ss0; accredit_sess=qvpjpg2mmmd3f7g2fnjvk77a7a; session_token=325a2fef7c20c617fc62a146bdaa28a436347fefdaf8c980dfae959e7a8783a7a%3A2%3A%7Bi%3A0%3Bs%3A13%3A%22session_token%22%3Bi%3A1%3Bs%3A32%3A%22Uq7SQWl0hRGCtAImf1qTuFuMwFAukR9D%22%3B%7D; cgs-portal_session=lr86i9i6c1c4e6vii2p8esl0ov; PHPSESSID=4nnud5k1beebr0a6i4utst3j8g; my_oksndbbsdsdsdsd=nsb591jeqcv6sqf9saogf0fqkb; prof_accredit_sess=7630tkcf4hveu6jga65h8t419m; standards_sas_sess=ljf3dtfkjk38jk68g4lv3tflfk; dpmis-portal_session=289aj88fk016ea289sgpu25ej9; _csrf=69b571b6f2dfc1c9e7444a09015c1cc4735ed943b6d7d0a6eed3784f52a3f21fa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22R3q5VP9LJsDqyoilGPMoaBHqyX9GeDcv%22%3B%7D; kvb-portal_session=d79c8kct7cah42dll94fkhg9ng; _csrf=da29c60f666759ec58a575f27a2aaae637a21011a1625e63a713fb2d6de8680aa%3A2%3A%7Bi%3A0%3Bs%3A5%3A%22_csrf%22%3Bi%3A1%3Bs%3A32%3A%22QezEfFkwmne727_1jRbQR-a1VmlJ96_S%22%3B%7D',
+    'HTTP_REFERER' => 'http://localhost/ef/web/ef/default/login',
+    'HTTP_CONNECTION' => 'close',
+    'HTTP_ORIGIN' => 'http://localhost',
+    'CONTENT_LENGTH' => '260',
+    'CONTENT_TYPE' => 'application/x-www-form-urlencoded',
+    'HTTP_ACCEPT_ENCODING' => 'gzip, deflate, br, zstd',
+    'HTTP_ACCEPT_LANGUAGE' => 'en-US,en;q=0.5',
+    'HTTP_ACCEPT' => 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
+    'HTTP_USER_AGENT' => 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:145.0) Gecko/20100101 Firefox/145.0',
+    'HTTP_HOST' => 'localhost',
+    'REDIRECT_STATUS' => '200',
+    'FCGI_ROLE' => 'RESPONDER',
+    'PHP_SELF' => '/ef/web/index.php',
+    'REQUEST_TIME_FLOAT' => 1764751653.821658,
+    'REQUEST_TIME' => 1764751653,
+]
